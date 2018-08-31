@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <link href="css/js.css" rel="stylesheet">
+    
+</head>
+<body>
+Hello Javascript!<br/>
+<input type="button" value="OK" onclick="hello()">
+<script lang="Javascript">
+    document.write(circleArea(2));
+    document.write(navigator.appCodeName);
+    document.write("<br/>");
+    var tab = new Array(1,2,3,4,5,6,7,8,9,10);
+    display(tab);
+    document.write(sum(tab)+"<br/>");
+    document.write(max(tab)+"<br/>");
+    document.write(avg(tab)+"<br/>");
+    document.write(isPrime(7)+"<br/>");
+    document.write(isPrime(8)+"<br/>");
+    display(getPrimeNumbers(tab));
+
+    var res = tab.filter(i => i % 2 == 0);
+    display(res);
+    res = tab.map(i => i + 1);
+    display(res);
+    var reduc = res.reduce((a,b)=>a+b,0);
+    document.write(reduc + "<br/>");
+
+    res = tab.filter(i => isPrime(i));
+    display(res);
+</script>
+
+<input type="text" onclick="document.bgColor = 'black'" onmouseover="document.bgColor = 'green'" onmouseout="document.bgColor = 'blue'" onfocus="document.bgColor = 'yellow'"/>
+<br/>
+<br/>
+<br/>
+<form name="myForm">
+    Title : <input type="text" name="titleBox" onblur="checkTitle()">*
+        <span id="titleError">Title obligatoire</span>
+    <br/>
+    Price : <input type="text" name="priceBox" onblur="checkPrice()"/>*
+    <span id="container">
+        <span id="priceError">Prix obligatoire</span>
+        <span id="priceFormatError">Le prix doit être un numérique</span>
+    </span>
+    <br/> 
+    <input type="button" value="OK" name="okButton" onclick="manageForm()"/>
+    <div id="groupDiv">
+        <div class="hello">Hello</div>
+        <div id="worldId">World</div>
+    </div>
+    <div>Do not touch</div>
+    <input id="myBtn" type="button" value="ChangeDiv"/>
+    <input type="button" value="ChangeWorld" onclick="changeWorldDiv()"/>
+    <input type="button" value="ChangeGroupDiv" onclick="changeGroupDiv()"/>
+    <input type="button" value="ChangeHello" onclick="changeHello()"/>
+    <input type="button" value="ToggleHello"  onclick="toggleVisible()"/>
+    <input type="button" value="ToggleEnabled"  onclick="toggleEnabled()"/>
+</form>
+
+<script src="js/mylibrary.js"></script>
+
+</body>
+</html>
